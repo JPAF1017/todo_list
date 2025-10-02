@@ -54,6 +54,18 @@ const TodoList = () => {
           </div>
         </div>
       ))}
+      {/* ===================================================================== */}
+      <div className='add-list'>
+        {/* Input field for adding a new item under a specific heading */}
+        <input
+          type="text"
+          className='list-input'
+          placeholder='Add List'
+          value={listInputs[index] || ""} //Use the value from listInputs array based on the current heading index
+          onChange={(e) => handleListInputChange(index, e.target.value)}/>
+        {/* Buttong to add the list item to the corresponding heading */}
+        <button className='add-list-button' onClick={() => handleAddList(index)}>Add List</button>
+      </div>
     </>
   );
 };
