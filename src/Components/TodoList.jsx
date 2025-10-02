@@ -38,7 +38,7 @@ const handleAddTodo = () => {
 };
 
 const TodoList = () => {
-
+  <button className='delete-button-heading' onClick={handleDeleteTodo}>Delete Heading</button>
   return (
     <>
       <div className="todo-container">
