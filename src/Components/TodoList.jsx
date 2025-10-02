@@ -13,7 +13,6 @@ const handleAddTodo = () => {
 };
 
 const TodoList = () => {
-  
 
   return (
     <>
@@ -24,13 +23,25 @@ const TodoList = () => {
             type="text"
             className="heading-input"
             placeholder="Enter heading"
-            
+
           />
           <button className="add-list-button">Add Heading</button>
         </div>
       </div>
       <div className="todo_main">
         
+      </div>
+
+      <div className='input-container'>{/* Input field to enter new heading */}
+        <input
+          type="text"
+          className='heading-input'//CSS class for styling
+          placeholder='Enter heading'//Text shown when input is empty
+          value={headingInput}
+          onChange={(e) => (setHeadingInput(e.target.value))}//Add onChange event handler to update headinInput state
+        />
+        {/* Button to add the entered heading to the todo list */}
+        <button className='add-list-button' onClick={handleAddTodo}>Add Heading</button>
       </div>
     </>
   );
