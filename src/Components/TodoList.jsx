@@ -31,7 +31,7 @@ const TodoList = () => {
       <div className="todo_main">
         
       </div>
-
+      {/* ===================================================================== */}
       <div className='input-container'>{/* Input field to enter new heading */}
         <input
           type="text"
@@ -43,6 +43,17 @@ const TodoList = () => {
         {/* Button to add the entered heading to the todo list */}
         <button className='add-list-button' onClick={handleAddTodo}>Add Heading</button>
       </div>
+      {/* ===================================================================== */}
+      {todos.map((todo, indes) => (//Iterate over each todo item in the todos array
+        <div key={index} className='todo-card'>
+          <div className='heading-todo'>
+            {/* Display the heading text of the current todo item */}
+            <h3>{todo.heading}</h3> {/* Display the heading here */}
+            {/* Buttong the delete the current heading by passing its index */}
+            <button className='delete-button-heading' onClick={() => handleDeleteTodo(index)}>Delete Heading</button>
+          </div>
+        </div>
+      ))}
     </>
   );
 };
