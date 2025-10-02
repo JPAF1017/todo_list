@@ -5,6 +5,15 @@ const [todos, setTodos] = useState([]);
 const [headingInput, setHeadingInput] = useState([]);
 const [listInputs, setListInputs] = useState([]);
 
+const handleDeleteTodo = (index) => {
+  //Create a shollow copy of current todos array
+  const newTodos = [...todos];
+  //Remove the todo at the specified index
+  newTodos.splice(index, 1);
+  //Update the state with the new array (without the deleted todo)
+  setTodos(newTodos);
+}
+
 //Function to handle adding new list item to a specific todo heading
 const handleAddList = (index) => {
   //Check if the input for the given index is not empty or just whitespace
